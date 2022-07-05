@@ -1,0 +1,15 @@
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/bin/Debug/net6.0/level6
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/bin/Debug/net6.0/level6.deps.json
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/bin/Debug/net6.0/level6.runtimeconfig.json
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/bin/Debug/net6.0/level6.dll
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/bin/Debug/net6.0/level6.pdb
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/level6.csproj.AssemblyReference.cache
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/level6.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/level6.AssemblyInfoInputs.cache
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/level6.AssemblyInfo.cs
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/level6.csproj.CoreCompileInputs.cache
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/level6.dll
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/refint/level6.dll
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/level6.pdb
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/level6.genruntimeconfig.cache
+/Users/Josh/git/josht77/CSharpPlayersGuide/level6/obj/Debug/net6.0/ref/level6.dll
