@@ -6,4 +6,4 @@
 
 # Knowledge Check
 
-* 
+* (no knowledge check)
