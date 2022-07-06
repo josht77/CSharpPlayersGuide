@@ -2,7 +2,8 @@
 
 Console.WriteLine($"Number of chocolate eggs collected that day: ");
 
-string numEggsString = Convert.ToInt32(Console.ReadLine()!);
+string numEggsString = Console.ReadLine()!;
+int numEggs = Convert.ToInt32(numEggsString);
 
 int eachSister = numEggs / 4;
 int duckBear = numEggs % 4;
