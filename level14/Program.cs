@@ -2,52 +2,60 @@
 int round = 1;
 int mantHealth = 10;
 int cityHealth = 15;
-int mantLocation;
+int damage;
 
 RunGame();
 
 void RunGame()
 {
-    Prompt();
+    int range = Prompt("Player 1, how far away from the city do you want to station the Manticore?", 0, 100);
     Console.Clear();
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.WriteLine("Player 2, it is your turn.");
     while (mantHealth > 0 && cityHealth > 0)
     {
-
         Status(); // call to status
-        ComputeDamage(); // display damage dealt during the round 
+        damage = ComputeDamage(round);
+        Console.WriteLine($"The cannon is expected to deal {damage} damage this round"); // display damage dealt during the round 
+        Console.ForegroundColor = ConsoleColor.White;
+        int target = AskNum("Enter desired cannon range: ");
+        Console.ForegroundColor = ConsoleColor.White;
+        OverUnder(target, range);
+        cityHealth--;
+        round++;
+    }
+    WinOrLose(cityHealth > 0);
+}
 
-
+int Prompt(string text, int min, int max)
+{
+    while (true)
+    {
+        int num = AskNum(text);
+        if (num >= min && num < max)
+        {
+            return num;
+        }
     }
 }
 
-void Prompt()
+int ComputeDamage(int round)
 {
-    Console.WriteLine("Player 1, how far away from the city do you want to station the Manticore?");
-    mantLocation = Convert.ToInt32(Console.ReadLine()!);
-    Console.Clear();
-    Console.WriteLine("Player 2, it is your turn.");
-}
-
-void ComputeDamage()
-{
-    int damage = 0;
     if (round % 5 == 0 && round % 3 == 0)
     {
         Console.ForegroundColor = ConsoleColor.Blue;
-        damage = 10;
+        return 10;
     }
     else if (round % 5 == 0 || round % 3 == 0)
     {
         Console.ForegroundColor = ConsoleColor.Yellow;
-        damage = 3;
+        return 3;
     }
     else
     {
         Console.ForegroundColor = ConsoleColor.White;
-        damage = 1;
+        return 1;
     }
-    Console.WriteLine($"The cannon is expected to deal {damage} this round.");
-    Console.ForegroundColor = ConsoleColor.White;
 }
 
 
@@ -60,13 +68,21 @@ void PrintLine()
     Console.WriteLine();
 }
 
+int AskNum(string desc)
+{
+    Console.Write(desc + " ");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    int num = Convert.ToInt32(Console.ReadLine());
+    return num;
+}
+
 void Status()
 {
     PrintLine();
     Console.WriteLine($"STATUS: ROUND: {round} City: {cityHealth}/15 Manticore: {mantHealth}/10");
 }
 
-void OverUnder(int range, int target)
+void OverUnder(int target, int range)
 {
     if (target < range)
     {
@@ -78,7 +94,12 @@ void OverUnder(int range, int target)
     }
     else
     {
-        Console.WriteLine("That round was a DIRECT HIT!");
+
+        Console.Write("That round was a ");
+        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+        Console.WriteLine("DIRECT HIT!");
+        Console.ForegroundColor = ConsoleColor.White;
+        mantHealth -= damage;
     }
 }
 
@@ -86,15 +107,12 @@ void WinOrLose(bool won)
 {
     if (won)
     {
-        Console.WriteLine("The Manticore has been destroyed! The city of Consolas has been save!");
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("The Manticore has been destroyed! The city of Consolas has been saved!");
     }
     else
     {
+        Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine("The city has been destroyed. The Manticore and the Uncoded One have won.");
     }
 }
-
-
-
-
-
