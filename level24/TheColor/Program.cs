@@ -1,5 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-
+﻿internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Color color1 = new Color(232, 233, 1);
+        Color color2 = Color.Blue();
+        color1.toString();
+        color2.toString();
+    }
+}
 
 public class Color
 {
@@ -43,5 +51,8 @@ public class Color
     public static Color Purple()
     {
         return new Color(128, 0, 128);
+    }
+    public void toString() {
+        Console.WriteLine($"Red: {this.red} | Green: {this.green} | Blue: {this.blue}");
     }
 }
