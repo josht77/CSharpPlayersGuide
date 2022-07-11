@@ -14,7 +14,7 @@ Console.WriteLine($"{soup.Se} {soup.Mi} {soup.St}");
 SoupType GetSoupType()
 {
     Console.WriteLine("Pick a soup type (soup, stew, gumbo): ");
-    string input = Console.ReadLine();
+    string input = Console.ReadLine()!;
     return input switch
     {
         "soup" => SoupType.Soup,
@@ -27,7 +27,7 @@ SoupType GetSoupType()
 MainIngredient GetMainIngredient()
 {
     Console.WriteLine("Pick a Main Ingredient (mushrooms, chicken, carrots, potatoes): ");
-    string input = Console.ReadLine();
+    string input = Console.ReadLine()!;
     return input switch
     {
         "mushrooms" => MainIngredient.Mushrooms,
