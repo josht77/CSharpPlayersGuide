@@ -32,16 +32,13 @@ while (true)
 public class Door
 {
     private State state { get; set; }
-    private int _passcode { get => _passcode; set => setPasscode(value); }
+    private int _passcode; 
 
     public Door(int passcode)
     {
         this._passcode = passcode;
     }
 
-    public void setPasscode(int newPasscode ) {
-        this._passcode = newPasscode;
-    }
 
     public void Open()
     {
@@ -103,7 +100,7 @@ public class Door
     {
         Console.WriteLine("Input current passcode: ");
         int input = Convert.ToInt32(Console.ReadLine()!);
-        while (input != this._passcode)
+        while (input != _passcode)
         {
             Console.WriteLine("Try again: ");
             input = Convert.ToInt32(Console.ReadLine()!);

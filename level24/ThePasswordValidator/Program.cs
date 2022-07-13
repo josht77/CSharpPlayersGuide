@@ -16,47 +16,49 @@ while (true)
 }
 public class PasswordValidator
 {
-    private int _password() { get; set; }
-    private int HasNum() { get; set; }
-    private int HasUpper() { get; set; }
-    private int HasLower() { get; set; }
+    private int _password { get; set; }
+
 
     public PasswordValidator()
     {
     }
     public bool validateInput(string password)
     {
+        bool HasNum = false;
+        bool HasUpper = false;
+        bool HasLower = false;
 
         foreach (char letter in password)
         {
             if (char.IsDigit(letter))
             {
-                HasNum++;
+                HasNum = true;
             }
             if (char.IsUpper(letter))
             {
-                HasUpper++;
+                HasUpper = true;
             }
             if (char.IsLower(letter))
             {
-                HasLower++;
+                HasLower = true;
             }
-            if (char.Equals('T') || char.Equals('&'))
+            if (letter == 'T' || letter == '&')
             {
                 return false;
             }
-            return password.Length >= 6 && password.Length <= 13 && HasNum && HasUpper && HasLower;
+
         }
-//         private bool IsDigit(string password){
-//             foreach (char letter in password)
-//         {
-//             if (char.IsDigit(letter))
-//             {
-//                 return true;
-//             }
-//             return false;
-//         }
-// }
+        return password.Length >= 6 && password.Length <= 13 && HasNum && HasUpper && HasLower;
+        //         private bool IsDigit(string password){
+        //             foreach (char letter in password)
+        //         {
+        //             if (char.IsDigit(letter))
+        //             {
+        //                 return true;
+        //             }
+        //             return false;
+        //         }
+        // }
     }
 }
 
